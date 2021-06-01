@@ -169,7 +169,7 @@ public class RebusManager : MonoBehaviour
         Destroy(obj);
     }
 
-    public void RemoveLetter(string ch)
+    public void RemoveLetter()
     {
         if (_outputCounter <= 0)
             return;

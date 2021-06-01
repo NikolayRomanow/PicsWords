@@ -8,12 +8,12 @@ using UnityEngine.UI;
 public class LetterOutputElement : MonoBehaviour
 {
     public TextMeshProUGUI letter;
-    private Button button;
+    //private Button button;
     private void Awake()
     {
         letter = GetComponentInChildren<TextMeshProUGUI>();
-        button = GetComponent<Button>();
-        button.onClick.AddListener(() => FindObjectOfType<RebusManager>().RemoveLetter(letter.text));
+        //button = GetComponent<Button>();
+        //button.onClick.AddListener(() => FindObjectOfType<RebusManager>().RemoveLetter(letter.text));
         SetLetter(' ');
     }
 

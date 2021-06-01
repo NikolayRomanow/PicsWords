@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class MoneyManager : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class MoneyManager : MonoBehaviour
     
     [SerializeField] private int money;
 
+    public UnityAction Action;
+    
     private void Awake()
     {
         moneyOnUI.text = $"{money}";
@@ -27,5 +31,15 @@ public class MoneyManager : MonoBehaviour
         money -= mon;
         
         moneyOnUI.text = $"{money}";
+        
+        Action.Invoke();
+    }
+
+    public bool ValidateMoney(int mon, Button eventButton)
+    {
+        bool isValid = mon <= money ? true : false;
+
+        eventButton.interactable = isValid;
+        return isValid;
     }
 }
