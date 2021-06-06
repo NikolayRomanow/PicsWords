@@ -19,9 +19,4 @@ public class EventButton : MonoBehaviour
         //_button.onClick.AddListener(() => _moneyManager.ValidateMoney(coast, _button));
         _moneyManager.Action += () => { _moneyManager.ValidateMoney(coast, _button); };
     }
-
-    private void OnEnable()
-    {
-        _moneyManager.ValidateMoney(coast, _button);
-    }
 }

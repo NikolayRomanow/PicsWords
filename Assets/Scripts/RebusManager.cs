@@ -24,6 +24,7 @@ public class RebusManager : MonoBehaviour
     [SerializeField] private string hiddenWord;
 
     [SerializeField] private MoneyManager moneyManager;
+    [SerializeField] private Image zoomCanvas;
 
     [Header("Chars")]
     [SerializeField] private GameObject letterOutput;
@@ -75,10 +76,23 @@ public class RebusManager : MonoBehaviour
         };
     }
 
+    private void ZoomImage(Image image)
+    {
+        zoomCanvas.gameObject.SetActive(true);
+        zoomCanvas.sprite = image.sprite;
+    }
+    
     public void LoadYetImage(int index)
     {
+        if (images[index].sprite != null)
+        {
+            ZoomImage(images[index]);
+            return;
+        }
+        
         images[index].sprite = rebusDataBaseAsset.images[index];
         images[index].color = new Color(255, 255, 255, 255);
+        
         moneyManager.RemoveMoney(10);
     }
     

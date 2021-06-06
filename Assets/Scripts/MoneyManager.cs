@@ -24,6 +24,8 @@ public class MoneyManager : MonoBehaviour
         money += mon;
 
         moneyOnUI.text = $"{money}";
+        
+        Action.Invoke();
     }
 
     public void RemoveMoney(int mon)
@@ -37,6 +39,8 @@ public class MoneyManager : MonoBehaviour
 
     public bool ValidateMoney(int mon, Button eventButton)
     {
+        Debug.Log("Valid");
+        
         bool isValid = mon <= money ? true : false;
 
         eventButton.interactable = isValid;
