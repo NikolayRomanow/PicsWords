@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca16bbab8ea9244879c3feb4753ecf, type: 3}
+  m_Name: Law
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 21300000, guid: eb9cae0fb5f9261448ef428a6c2f5460, type: 3}
+  - {fileID: 21300000, guid: 1bb552357e645d04b9327d721deec974, type: 3}
+  - {fileID: 21300000, guid: 3b91de8373cd3ad4f987eb306966b11a, type: 3}
+  - {fileID: 21300000, guid: e4ddad4cdd0e35c4e999e4e0dedaea5d, type: 3}
+  labelsURL:
+  - unsplash.com/@bill_oxford
+  - unsplash.com/@mvdheuvel
+  - unsplash.com/@lukemichael
+  - unsplash.com/@miracleday
+  word: "\u0437\u0430\u043A\u043E\u043D"

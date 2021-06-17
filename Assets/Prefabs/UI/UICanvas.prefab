@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6633566391418269773}
   - component: {fileID: 6633566391418269772}
   - component: {fileID: 7935748859905446822}
+  - component: {fileID: 3607360610250231295}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -83,7 +84,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!114 &6633566391418269772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windows: []
+--- !u!114 &3607360610250231295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6633566391418269763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7e64db4bfc43bcbfe153d1fd7a7c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentLanguage: 0
 --- !u!1 &6633566392620099579
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,9 @@ using UnityEngine.UI;
 public class LetterOutputElement : MonoBehaviour
 {
     public TextMeshProUGUI letter;
+    public int buttonIndex;
+    public int siblingIndex;
+    
     //private Button button;
     private void Awake()
     {
@@ -20,5 +23,16 @@ public class LetterOutputElement : MonoBehaviour
     public void SetLetter(char ch)
     {
         letter.text = $"{ch}";
+    }
+    
+    public void SetLetter(char ch, int index)
+    {
+        letter.text = $"{ch}";
+        siblingIndex = index;
+    }
+
+    public void RemoveLetter()
+    {
+        letter.text = "\0";
     }
 }

@@ -1,0 +1,12 @@
+{
+  "container": {
+    "ex_one": {
+      "ru": "Пример",
+      "en": "Example"
+    },
+    "ex_two": {
+      "ru": "Другой пример",
+      "en": "AnotherExample"
+    }
+  }
+}

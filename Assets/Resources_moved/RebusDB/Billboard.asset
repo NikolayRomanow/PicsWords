@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca16bbab8ea9244879c3feb4753ecf, type: 3}
+  m_Name: Billboard
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 21300000, guid: 50753510357210a458cc4df238e55c0d, type: 3}
+  - {fileID: 21300000, guid: 1f8b7acf2959acb43bc05078d0e4d7d1, type: 3}
+  - {fileID: 21300000, guid: 5e9c41b2189cd9844860ba8f808b830f, type: 3}
+  - {fileID: 21300000, guid: 0f6ff4376276c744dadffd29eaecb0bb, type: 3}
+  labelsURL:
+  - unsplash.com/@yoav
+  - unsplash.com/@frantzeric96
+  - unsplash.com/@visualsbydanny
+  - unsplash.com/@florianwehde
+  word: "\u0431\u0438\u043B\u0431\u043E\u0440\u0434"

@@ -6,29 +6,29 @@ using UnityEngine;
 
 public class AdmobManager : MonoBehaviour
 {
-    [SerializeField] private string rewardId;
-
-    private MoneyManager _moneyManager;
+    private const string _rewardID = "ca-app-pub-4476600945726730/7367746483";
     private RewardedAd _rewardedAd;
+    
+    private MoneyManager _moneyManager;
 
     private void Awake()
     {
         MobileAds.Initialize(status => { });
+        
         _moneyManager = FindObjectOfType<MoneyManager>();
     }
     
     private void Start()
     {
-        _rewardedAd = new RewardedAd(rewardId);
+        _rewardedAd = new RewardedAd(_rewardID);
+
         AdRequest adRequest = new AdRequest.Builder().Build();
         _rewardedAd.LoadAd(adRequest);
-
-        _rewardedAd.OnUserEarnedReward += (sender, reward) => { _moneyManager.AddMoney(25); };
     }
 
     public void ShowRewardedApp()
     {
-        if (_rewardedAd.IsLoaded())
-            _rewardedAd.Show();
+        _rewardedAd.Show();
+        _moneyManager.AddMoney(25);
     }
 }

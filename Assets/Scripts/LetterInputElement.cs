@@ -8,13 +8,15 @@ using UnityEngine.UI;
 public class LetterInputElement : MonoBehaviour
 {
     public TextMeshProUGUI letter;
+    public int siblingIndex;
+    
     private Button button;
 
     private void Awake()
     {
         letter = GetComponentInChildren<TextMeshProUGUI>();
         button = GetComponent<Button>();
-        button.onClick.AddListener(() => FindObjectOfType<RebusManager>().SetLetter(letter.text, gameObject));
+        button.onClick.AddListener(() => FindObjectOfType<RebusManager>().SetLetter(letter.text, gameObject, siblingIndex));
     }
     
     private void OnButton()
@@ -22,8 +24,9 @@ public class LetterInputElement : MonoBehaviour
         Debug.Log("pressed");
     }
 
-    public void SetLetter(char ch)
+    public void SetLetter(char ch, int index)
     {
         letter.text = $"{ch}";
+        siblingIndex = index;
     }
 }
