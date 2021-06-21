@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca16bbab8ea9244879c3feb4753ecf, type: 3}
+  m_Name: Museum
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 21300000, guid: 0a2d7a15b8fbd564eaa4ebcca1904878, type: 3}
+  - {fileID: 21300000, guid: 8686430eb61e14741908c3ab1574b690, type: 3}
+  - {fileID: 21300000, guid: 89bcd59e72199fa4c84c96293731ca0a, type: 3}
+  - {fileID: 21300000, guid: 8ebd84ef25070e24bbee82c8b5d3b524, type: 3}
+  labelsURL:
+  - stockfreeimages.com@creativecommonsstockphotos
+  - unsplash.com/@villagloria
+  - unsplash.com/@f9lco
+  - unsplash.com/@dulgier
+  word: "\u043C\u0443\u0437\u0435\u0439"

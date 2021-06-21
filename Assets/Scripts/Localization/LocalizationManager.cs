@@ -10,23 +10,18 @@ public enum Languages
     Russian,
     English
 }
-public class LocalizationManager : MonoBehaviour
+public static class LocalizationManager
 {
-    public Languages CurrentLanguage;
-    public LocalizationStorage LocalizationStorage;
+    public static Languages CurrentLanguage;
+    public static LocalizationStorage LocalizationStorage;
 
-    private void Awake()
-    {
-        SetLocalization();
-    }
-
-    public void SetLocalization()
+    public static void SetLocalization()
     {
         var textAsset = Resources.Load<TextAsset>("Localization");
         LocalizationStorage = JsonConvert.DeserializeObject<LocalizationStorage>(textAsset.text);
     }
 
-    public string ReturnTranslate(string key)
+    public static string ReturnTranslate(string key)
     {
         var translate = String.Empty;
         var storageElement = LocalizationStorage.ReturnStorageElement(key);

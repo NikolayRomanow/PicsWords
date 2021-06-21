@@ -1,12 +1,52 @@
 {
-  "container": {
-    "ex_one": {
-      "ru": "Пример",
-      "en": "Example"
+  "container":{
+    "ui_main_title":{
+      "ru":"PicoLogic",
+      "en":"Picology"
     },
-    "ex_two": {
-      "ru": "Другой пример",
-      "en": "AnotherExample"
+    "ui_main_gamebtn":{
+      "ru":"Игра",
+      "en":"Game"
+    },
+    "ui_main_bonusbtn":{
+      "ru":"Бонус",
+      "en":"Bonus"
+    },
+    "ui_settings_title":{
+      "ru":"Настройки",
+      "en":"Settings"
+    },
+    "ui_settings_soundoff":{
+      "ru":"Выключить звук",
+      "en":"Sound Off"
+    },
+    "ui_settings_issue":{
+      "ru":"Сообщить о проблеме",
+      "en":"Issue Report"
+    },
+    "ui_help_tittle":{
+      "ru":"Подсказки",
+      "en":"Hints"
+    },
+    "ui_help_rmvltrs":{
+      "ru":"Убрать лишние буквы",
+      "en":"Remove extra letters"
+    },
+    "ui_help_opnrnd":{
+      "ru":"Открыть случайную букву",
+      "en":"Open random letter"
+    },
+    "ui_help_watchads":{
+      "ru":"Смотреть рекламу",
+      "en":"Watch ads"
+    },
+    "ui_help_friend":{
+      "ru":"Помощь друга",
+      "en":"Friend's help"
+    },
+    "ui_win_next":{
+      "ru":"Далее",
+      "en":"Next"
     }
   }
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca16bbab8ea9244879c3feb4753ecf, type: 3}
+  m_Name: Hacker
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 21300000, guid: 116c874f4436dc64fbaac8b6d58e4fa7, type: 3}
+  - {fileID: 21300000, guid: d494e25e31cbb5b449f703e59357a32b, type: 3}
+  - {fileID: 21300000, guid: 1dea7f5ecee1e234a859dfd3be6ea5eb, type: 3}
+  - {fileID: 21300000, guid: 8cbaf149ed9df354684e87cb22263a62, type: 3}
+  labelsURL:
+  - unsplash.com/@markusspiske
+  - unsplash.com/@cbpsc1
+  - unsplash.com/@nahelabdlhadi
+  - unsplash.com/@bermixstudio
+  word: "\u0445\u0430\u043A\u0435\u0440"

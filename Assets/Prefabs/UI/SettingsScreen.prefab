@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 6548793861900178830}
   - component: {fileID: 6548793861900178824}
   - component: {fileID: 6548793861900178825}
+  - component: {fileID: 6064010519628819703}
   m_Layer: 5
   m_Name: PingToError
   m_TagString: Untagged
@@ -280,6 +281,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6064010519628819703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548793861900178831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29f838084d12ba4a9983a6844a1049b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ui_settings_issue
 --- !u!1 &6548793861935600531
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +706,7 @@ GameObject:
   - component: {fileID: 6548793862360629290}
   - component: {fileID: 6548793862360629300}
   - component: {fileID: 6548793862360629301}
+  - component: {fileID: 5171242593294070991}
   m_Layer: 5
   m_Name: SettingsLabel
   m_TagString: Untagged
@@ -814,6 +829,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5171242593294070991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548793862360629291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29f838084d12ba4a9983a6844a1049b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ui_settings_title
 --- !u!1 &6548793862579556109
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +853,7 @@ GameObject:
   - component: {fileID: 6548793862579556108}
   - component: {fileID: 6548793862579556110}
   - component: {fileID: 6548793862579556111}
+  - component: {fileID: 6253097124714992435}
   m_Layer: 5
   m_Name: TurnAudio
   m_TagString: Untagged
@@ -947,6 +976,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6253097124714992435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548793862579556109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29f838084d12ba4a9983a6844a1049b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ui_settings_soundoff
 --- !u!1 &6548793862777316972
 GameObject:
   m_ObjectHideFlags: 0

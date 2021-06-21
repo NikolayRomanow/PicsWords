@@ -386,7 +386,8 @@ PrefabInstance:
       propertyPath: windows.Array.data[5]
       value: 
       objectReference: {fileID: 1788274809}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3607360610250231295, guid: 18de4bdbc3e22704bb3af9e80277ccca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 18de4bdbc3e22704bb3af9e80277ccca, type: 3}
 --- !u!114 &726594216 stripped
 MonoBehaviour:
@@ -2421,6 +2422,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1871166382479927393, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.5840149
+      objectReference: {fileID: 0}
     - target: {fileID: 1947443320577926281, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3570,7 +3576,7 @@ PrefabInstance:
     - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
         type: 3}
       propertyPath: addressableRef.Array.size
-      value: 6
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
         type: 3}
@@ -3601,6 +3607,56 @@ PrefabInstance:
         type: 3}
       propertyPath: addressableRef.Array.data[5].m_AssetGUID
       value: f459ed4028e7ec241b83442a1cdc70b9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[6].m_AssetGUID
+      value: 6d29f2e0cd1d5864b82876b28fe41784
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[7].m_AssetGUID
+      value: d57babd7add44884283333fee11edef4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[8].m_AssetGUID
+      value: ef14bbf8b97b1a443b654c9965bd7229
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[9].m_AssetGUID
+      value: 7380f2adcc616b24ea094c806a9d32cc
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[10].m_AssetGUID
+      value: 133ce17a476caf24398bf9ef69f76fa7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[11].m_AssetGUID
+      value: 69bce13f0abe67f4eb5bbddb1b2a98cb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[12].m_AssetGUID
+      value: c303423e092aaf845adeb52e9b1f58d8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[13].m_AssetGUID
+      value: 4e1443679d26f014f808e5c993530a14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[14].m_AssetGUID
+      value: 44007cce26fedc84386673c21f434219
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111115354783335356, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
+        type: 3}
+      propertyPath: addressableRef.Array.data[15].m_AssetGUID
+      value: 2d18307d5d9f796448c0358e3f0ba4e0
       objectReference: {fileID: 0}
     - target: {fileID: 7568744422630128591, guid: 3d3cbd7cda1cab34ebf6364f68274aaf,
         type: 3}

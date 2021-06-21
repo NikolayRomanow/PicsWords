@@ -40,7 +40,8 @@ public class RebusManager : MonoBehaviour
     [SerializeField] private int sizeLettersOutput;
     [SerializeField] private int sizeLettersInput;
 
-    private List<LetterOutputElement> letterOutputElements = new List<LetterOutputElement>();
+    [SerializeField] private List<LetterOutputElement> letterOutputElements = new List<LetterOutputElement>();
+    [SerializeField] private List<LetterInputElement> letterInputElements = new List<LetterInputElement>();
 
     private List<char> charsArray = new List<char>();
     [SerializeField] private int _outputCounter;
@@ -76,14 +77,20 @@ public class RebusManager : MonoBehaviour
         var bufferOutputCounter = _outputCounter;
         _outputCounter = count;
 
-        if (letterOutputElements[count].letter.text != " ")
+        LetterOutputElement letterOutputElement;
+        LetterInputElement letterInputElement = letterInputElements.Find(x => x.letter.text == hiddenWord[count].ToString());
+
+        
+        if (!letterOutputElements[count].letter.text.Contains('\0'))
         {
-            count = letterOutputElements.IndexOf(letterOutputElements.Find(item => item.letter.text == " "));
+            letterOutputElement = letterOutputElements.Find(item => item.letter.text.Contains('\0'));
+            count = letterOutputElements.IndexOf(letterOutputElement);
+            letterInputElement = letterInputElements.Find(x => x.letter.text == hiddenWord[count].ToString());
             _outputCounter = count;
             Debug.Log(count);
         }
         
-        SetLetter(hiddenWord[count].ToString(), null, -1);
+        SetLetter(hiddenWord[count].ToString(), letterInputElement.gameObject, -1);
         moneyManager.RemoveMoney(20);
 
         _outputCounter = bufferOutputCounter;
@@ -97,12 +104,27 @@ public class RebusManager : MonoBehaviour
             return;
 
         expensiveLettersIsShow = true;
+
+        // for (int i = 0; i < letterInputElements.Count; i++)
+        // {
+        //     if (!hiddenWord.Contains(letterInputElements[i].letter.text))
+        //     {
+        //         //Destroy(rootLettersInput.GetChild(i).gameObject);
+        //         rootLettersInput.GetChild(i).gameObject.SetActive(false);
+        //     }
+        // }
+
+        StartCoroutine(RemoveLettersNum());
+        
         for (int i = 0; i < rootLettersInput.childCount; i++)
         {
-            if (!hiddenWord.Contains(rootLettersInput.GetChild(i).GetComponent<LetterInputElement>().letter.text))
+            if (rootLettersInput.GetChild(i).GetComponent<LetterInputElement>())
             {
-                //Destroy(rootLettersInput.GetChild(i).gameObject);
-                rootLettersInput.GetChild(i).gameObject.SetActive(false);
+                if (!hiddenWord.Contains(rootLettersInput.GetChild(i).GetComponent<LetterInputElement>().letter.text))
+                {
+                    //Destroy(rootLettersInput.GetChild(i).gameObject);
+                    rootLettersInput.GetChild(i).gameObject.SetActive(false);
+                }
             }
         }
         
@@ -208,6 +230,7 @@ public class RebusManager : MonoBehaviour
             
             lttr.buttonIndex = i;
             lttr.GetComponent<Button>().onClick.AddListener(() => {RemoveThisLetter(lttr.buttonIndex);});
+            lttr.SetLetter('\0');
             
             letterOutputElements.Add(lttr);
         }
@@ -217,6 +240,8 @@ public class RebusManager : MonoBehaviour
             var letter = Instantiate(letterInput, rootLettersInput);
             var letterInputElement = letter.GetComponent<LetterInputElement>();
 
+            letterInputElements.Add(letterInputElement);
+            
             var ch = charsArray[Random.Range(0, charsArray.Count - 1)];
             letterInputElement.SetLetter(ch, i);
 
@@ -236,9 +261,9 @@ public class RebusManager : MonoBehaviour
         if (_outputCounter >= letterOutputElements.Count)
             return;
 
-        if (letterOutputElements[_outputCounter].siblingIndex == -1)
+        if (letterOutputElements[_outputCounter].siblingIndex == -1 || !letterOutputElements[_outputCounter].letter.text.Contains('\0'))
         {
-            while (letterOutputElements[_outputCounter].siblingIndex == -1)
+            while (letterOutputElements[_outputCounter].siblingIndex == -1 || !letterOutputElements[_outputCounter].letter.text.Contains('\0'))
             {
                 _outputCounter++;
             }
@@ -264,9 +289,10 @@ public class RebusManager : MonoBehaviour
             }
         }
 
-        Destroy(obj);
+        letterInputElements.Remove(obj.GetComponent<LetterInputElement>());
         if (obj != null)
-            Instantiate(emptyButton, rootLettersInput).transform.SetSiblingIndex(index);
+            Instantiate(emptyButton, rootLettersInput).transform.SetSiblingIndex(obj.GetComponent<LetterInputElement>().siblingIndex);
+        Destroy(obj);
     }
 
     public void RemovingLetter()
@@ -290,6 +316,8 @@ public class RebusManager : MonoBehaviour
         
         var letter = Instantiate(letterInput, rootLettersInput);
         
+        letterInputElements.Add(letter.GetComponent<LetterInputElement>());
+        
         letter.transform.SetSiblingIndex(letterOutputElements[_outputCounter - 1].siblingIndex);
         
         var letterInputElement = letter.GetComponent<LetterInputElement>();
@@ -307,7 +335,7 @@ public class RebusManager : MonoBehaviour
     {
         var lt = letterOutputElements[index].letter.text[0];
 
-        if (letterOutputElements[index].siblingIndex == -1)
+        if (letterOutputElements[index].siblingIndex == -1 || letterOutputElements[index].letter.text.Contains('\0'))
         {
             return;
         }
@@ -317,6 +345,8 @@ public class RebusManager : MonoBehaviour
         Destroy(rootLettersInput.GetChild(letterOutputElements[index].siblingIndex).gameObject);
         
         var letter = Instantiate(letterInput, rootLettersInput);
+        
+        letterInputElements.Add(letter.GetComponent<LetterInputElement>());
         
         letter.transform.SetSiblingIndex(letterOutputElements[index].siblingIndex);
         
@@ -328,7 +358,7 @@ public class RebusManager : MonoBehaviour
         
         letterOutputElements[index].siblingIndex = 0;
 
-        _outputCounter = index;
+        _outputCounter = 0;
     }
     
     public void RemoveLetter()
@@ -338,6 +368,7 @@ public class RebusManager : MonoBehaviour
 
     IEnumerator RemoveLettersNum()
     {
+        _outputCounter = bufferWord.Count;
         while (_outputCounter > 0)
         {
             yield return new WaitForSeconds(0.01f);

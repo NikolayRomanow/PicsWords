@@ -53,6 +53,66 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 6d29f2e0cd1d5864b82876b28fe41784
+    m_Address: Assets/Resources_moved/RebusDB/Hacker.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d57babd7add44884283333fee11edef4
+    m_Address: Assets/Resources_moved/RebusDB/Morning.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ef14bbf8b97b1a443b654c9965bd7229
+    m_Address: Assets/Resources_moved/RebusDB/Dog.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7380f2adcc616b24ea094c806a9d32cc
+    m_Address: Assets/Resources_moved/RebusDB/Rainbow.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 133ce17a476caf24398bf9ef69f76fa7
+    m_Address: Assets/Resources_moved/RebusDB/Plastic.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 69bce13f0abe67f4eb5bbddb1b2a98cb
+    m_Address: Assets/Resources_moved/RebusDB/Orchestra.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c303423e092aaf845adeb52e9b1f58d8
+    m_Address: Assets/Resources_moved/RebusDB/Opera.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4e1443679d26f014f808e5c993530a14
+    m_Address: Assets/Resources_moved/RebusDB/Museum.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 44007cce26fedc84386673c21f434219
+    m_Address: Assets/Resources_moved/RebusDB/Metal.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 2d18307d5d9f796448c0358e3f0ba4e0
+    m_Address: Assets/Resources_moved/RebusDB/Button.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 719cc00d8b20d09419c1e0b7623b1edc, type: 2}
   m_SchemaSet:
