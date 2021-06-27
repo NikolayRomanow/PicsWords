@@ -43,6 +43,8 @@ public class RebusManager : MonoBehaviour
     [SerializeField] private List<LetterOutputElement> letterOutputElements = new List<LetterOutputElement>();
     [SerializeField] private List<LetterInputElement> letterInputElements = new List<LetterInputElement>();
 
+    [SerializeField] private Button removeUnnecessaryButton;
+    
     private List<char> charsArray = new List<char>();
     [SerializeField] private int _outputCounter;
 
@@ -62,7 +64,7 @@ public class RebusManager : MonoBehaviour
             rebusDataBaseAsset = handle.Result;
             indexOfRebus++;
 
-            moneyManager.AddMoney(20);
+            moneyManager.AddMoney(10);
                 
             SetRebus();
                 
@@ -102,35 +104,10 @@ public class RebusManager : MonoBehaviour
     {
         if (expensiveLettersIsShow)
             return;
-
+        
         expensiveLettersIsShow = true;
 
-        // for (int i = 0; i < letterInputElements.Count; i++)
-        // {
-        //     if (!hiddenWord.Contains(letterInputElements[i].letter.text))
-        //     {
-        //         //Destroy(rootLettersInput.GetChild(i).gameObject);
-        //         rootLettersInput.GetChild(i).gameObject.SetActive(false);
-        //     }
-        // }
-
-        StartCoroutine(RemoveLettersNum());
-        
-        for (int i = 0; i < rootLettersInput.childCount; i++)
-        {
-            if (rootLettersInput.GetChild(i).GetComponent<LetterInputElement>())
-            {
-                if (!hiddenWord.Contains(rootLettersInput.GetChild(i).GetComponent<LetterInputElement>().letter.text))
-                {
-                    //Destroy(rootLettersInput.GetChild(i).gameObject);
-                    rootLettersInput.GetChild(i).gameObject.SetActive(false);
-                }
-            }
-        }
-        
-        moneyManager.RemoveMoney(30);
-        
-        windowManager.SetScreen(1);
+        StartCoroutine(RemoveUnnecessaryLettersNum());
     }
     
     private void Awake()
@@ -163,12 +140,13 @@ public class RebusManager : MonoBehaviour
         images[index].sprite = rebusDataBaseAsset.images[index];
         images[index].color = new Color(255, 255, 255, 255);
 
-        moneyManager.RemoveMoney(10);
+        moneyManager.RemoveMoney(2);
     }
     
     private void SetRebus()
     {
-
+        removeUnnecessaryButton.interactable = true;
+        
         expensiveLettersIsShow = false;
         
         winPanel.SetActive(false);
@@ -301,6 +279,11 @@ public class RebusManager : MonoBehaviour
             return;
 
         var lt = letterOutputElements[_outputCounter - 1].letter.text[0];
+        if (lt == '\0')
+        {
+            _outputCounter--;
+            return;
+        }
 
         if (letterOutputElements[_outputCounter - 1].siblingIndex == -1)
         {
@@ -374,6 +357,73 @@ public class RebusManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             RemovingLetter();
         }
+    }
+
+    IEnumerator RemoveUnnecessaryLettersNum()
+    {
+        _outputCounter = bufferWord.Count;
+        while (_outputCounter > 0)
+        {
+            yield return new WaitForSeconds(0.01f);
+            RemovingLetter();
+        }
+
+        // for (int i = 0; i < letterInputElements.Count; i++)
+        // {
+        //     if (!hiddenWord.Contains(letterInputElements[i].letter.text))
+        //     {
+        //         //Destroy(rootLettersInput.GetChild(i).gameObject);
+        //         rootLettersInput.GetChild(i).gameObject.SetActive(false);
+        //     }
+        // }
+
+        for (int i = 0; i < rootLettersInput.childCount; i++)
+        {
+            if (rootLettersInput.GetChild(i).GetComponent<LetterInputElement>())
+            {
+                if (!hiddenWord.Contains(rootLettersInput.GetChild(i).GetComponent<LetterInputElement>().letter.text))
+                {
+                    //Destroy(rootLettersInput.GetChild(i).gameObject);
+                    rootLettersInput.GetChild(i).gameObject.SetActive(false);
+                }
+            }
+        }
+
+        for (int i = 0; i < hiddenWord.Length; i++)
+        {
+            int num = 0;
+            int sum = 0;
+            
+            for (int j = 0; j < hiddenWord.Length; j++)
+            {
+                if (hiddenWord[i] == hiddenWord[j])
+                    num++;
+            }
+
+            for (int l = 0; l < rootLettersInput.childCount; l++)
+            {
+                if (rootLettersInput.GetChild(l).GetComponent<LetterInputElement>())
+                {
+                    if (rootLettersInput.GetChild(l).GetComponent<LetterInputElement>().letter.text.Contains(hiddenWord[i]))
+                    {
+                        sum++;
+                        if (sum > num)
+                        {
+                            //Destroy(rootLettersInput.GetChild(i).gameObject);
+                            rootLettersInput.GetChild(l).gameObject.SetActive(false);
+                        }
+                    }
+                }
+            }
+            
+            //Debug.Log($"{hiddenWord[i]}: {sum}");
+        }
+        
+        moneyManager.RemoveMoney(30);
+        
+        removeUnnecessaryButton.interactable = false;
+        
+        windowManager.SetScreen(1);
     }
 }
 
