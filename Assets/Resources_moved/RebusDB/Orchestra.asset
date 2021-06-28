@@ -22,4 +22,6 @@ MonoBehaviour:
   - unsplash.com/@kazuo513
   - unsplash.com/@spencerimbrockphoto
   - unsplash.com/@gwundrig
-  word: "\u043E\u0440\u043A\u0435\u0441\u0442\u0440"
+  rusWord: "\u043E\u0440\u043A\u0435\u0441\u0442\u0440"
+  engWord: orchestra
+  espWord: 

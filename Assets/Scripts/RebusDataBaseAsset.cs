@@ -7,5 +7,7 @@ public class RebusDataBaseAsset : ScriptableObject
 {
     public List<Sprite> images = new List<Sprite>(4);
     public List<string> labelsURL = new List<string>(4);
-    public string word;
+    public string rusWord;
+    public string engWord;
+    public string espWord;
 }

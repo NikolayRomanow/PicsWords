@@ -113,9 +113,9 @@
       }
     },
     "jillejr.newtonsoft.json-for-unity": {
-      "version": "file:D:/Downloads/Newtonsoft.Json-for-Unity-13.0.102 (4)/Newtonsoft.Json-for-Unity-13.0.102",
+      "version": "file:Newtonsoft.Json-for-Unity-13.0.102",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {}
     },
     "com.unity.modules.ai": {

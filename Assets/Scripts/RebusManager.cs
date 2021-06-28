@@ -112,6 +112,21 @@ public class RebusManager : MonoBehaviour
     
     private void Awake()
     {
+        switch (Application.systemLanguage)
+        {
+            case SystemLanguage.English:
+                LocalizationManager.CurrentLanguage = Languages.English;
+                break;
+            case SystemLanguage.Russian:
+                LocalizationManager.CurrentLanguage = Languages.Russian;
+                break;
+            case SystemLanguage.Spanish:
+                LocalizationManager.CurrentLanguage = Languages.Spanish;
+                break;
+            default: LocalizationManager.CurrentLanguage = Languages.English;
+                break;
+        }
+        
         addressableRef[indexOfRebus].LoadAssetAsync().Completed += handle =>
         {
             rebusDataBaseAsset = handle.Result;
@@ -145,6 +160,8 @@ public class RebusManager : MonoBehaviour
     
     private void SetRebus()
     {
+        zoomCanvas.gameObject.SetActive(false);
+        
         removeUnnecessaryButton.interactable = true;
         
         expensiveLettersIsShow = false;
@@ -164,16 +181,44 @@ public class RebusManager : MonoBehaviour
         images[0].sprite = rebusDataBaseAsset.images[0];
         images[0].color = new Color(255, 255, 255, 255);
 
-        hiddenWord = rebusDataBaseAsset.word;
+        switch (LocalizationManager.CurrentLanguage)
+        {
+            case Languages.Russian:
+                hiddenWord = rebusDataBaseAsset.rusWord;
+                break;
+            case Languages.English:
+                hiddenWord = rebusDataBaseAsset.engWord;
+                break;
+            case Languages.Spanish:
+                hiddenWord = rebusDataBaseAsset.espWord;
+                break;
+            default: hiddenWord = rebusDataBaseAsset.engWord;
+                break;
+        }
+        
         sizeLettersOutput = hiddenWord.Length;
 
         string _charsArray = hiddenWord;
 
         int counter = sizeLettersInput - _charsArray.Length;
+
+        string alphabet;
+
+        switch (LocalizationManager.CurrentLanguage)
+        {
+            case Languages.Russian:
+                alphabet = Alphabet.Russian;
+                break;
+            case Languages.English:
+                alphabet = Alphabet.English;
+                break;
+            default: alphabet = Alphabet.English;
+                break;
+        }
         
         for (int i = 0; i < counter; i++)
         {
-            _charsArray += Alphabet.Russian[Random.Range(0, Alphabet.Russian.Length - 1)];
+            _charsArray += alphabet[Random.Range(0, alphabet.Length - 1)];
         }
 
         for (int i = 0; i < _charsArray.Length; i++)
@@ -430,4 +475,5 @@ public class RebusManager : MonoBehaviour
 public static class Alphabet
 {
     public const string Russian = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+    public const string English = "abcdefghijklmnopqrstuvwxyz";
 }

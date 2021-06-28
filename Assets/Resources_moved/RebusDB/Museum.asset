@@ -22,4 +22,6 @@ MonoBehaviour:
   - unsplash.com/@villagloria
   - unsplash.com/@f9lco
   - unsplash.com/@dulgier
-  word: "\u043C\u0443\u0437\u0435\u0439"
+  rusWord: "\u043C\u0443\u0437\u0435\u0439"
+  engWord: museum
+  espWord: 

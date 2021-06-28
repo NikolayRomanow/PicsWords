@@ -8,7 +8,8 @@ using UnityEngine;
 public enum Languages
 {
     Russian,
-    English
+    English,
+    Spanish
 }
 public static class LocalizationManager
 {
@@ -62,10 +63,12 @@ public class LocalizationStorageElement
 {
     [JsonProperty("ru")] public string russian;
     [JsonProperty("en")] public string english;
+    [JsonProperty("es")] public string spanish;
 
-    public LocalizationStorageElement(string rus, string eng)
+    public LocalizationStorageElement(string rus, string eng, string esp)
     {
         russian = rus;
         english = eng;
+        spanish = esp;
     }
 }

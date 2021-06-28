@@ -22,4 +22,6 @@ MonoBehaviour:
   - unsplash.com/@frantzeric96
   - unsplash.com/@visualsbydanny
   - unsplash.com/@florianwehde
-  word: "\u0431\u0438\u043B\u0431\u043E\u0440\u0434"
+  rusWord: "\u0431\u0438\u043B\u043B\u0431\u043E\u0440\u0434"
+  engWord: billboard
+  espWord: 
